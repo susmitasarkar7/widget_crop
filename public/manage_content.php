@@ -8,6 +8,8 @@
 <div id="main">
     <div id="navigation">
         <?php echo navigation($current_subject, $current_page); ?>
+        <br />
+        <a href="new_subject.php">+ Add a Subject</a>
     </div>
     <div id="page">
         <?php if($current_subject) {?>
