@@ -21,11 +21,20 @@
         <?php echo navigation($selected_subject_id, $selected_page_id); ?>
     </div>
     <div id="page">
-        <h2>Manage Content</h2>
         <?php if($selected_subject_id) {?>
-            <?php echo $selected_subject_id; ?>
+            <h2>Manage Subject</h2>
+
+            <?php $current_subject = find_subject_by_id($selected_subject_id); ?>
+
+            Menu Name: <?php echo $current_subject["menu_name"]; ?><br />
+
         <?php } elseif($selected_page_id) {?>
-            <?php echo $selected_page_id; ?>
+            <h2>Manage Page</h2>
+
+            <?php $current_page = find_page_by_id($selected_page_id); ?>
+
+            Menu Name: <?php echo $current_page["menu_name"]; ?><br />
+
         <?php } else {?>
             Please select a subject or a page.
         <?php }?>
