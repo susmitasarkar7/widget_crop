@@ -1,4 +1,4 @@
-<div id="footer">Copyright 20xx, Widget Crop</div>    
+<div id="footer">Copyright <?php echo date("Y"); ?>, Widget Crop</div>    
 </body>
 </html>
 

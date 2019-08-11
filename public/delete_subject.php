@@ -28,6 +28,6 @@
     } else {
         // Faliure
         $_SESSION["message"] = "Subject deletion failed.";
-        redirect_to("new_subject.php?subject={$id}");
+        redirect_to("manage_content.php?subject={$id}");
     }
 ?>
