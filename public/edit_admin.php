@@ -2,6 +2,7 @@
 <?php require_once("../includes/db_connection.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
+<?php confirm_logged_in(); ?>
 
 <?php 
     $admin = find_admin_by_id($_GET["id"]);
@@ -29,7 +30,7 @@
 
             $id = $admin["id"];
             $username = mysql_prep($_POST["username"]);
-            $hashed_password = mysql_prep($_POST["password"]);
+            $hashed_password = password_encrypt($_POST["password"]);
 
             $query = "UPDATE admins SET ";
             $query .= "username = '{$username}', ";

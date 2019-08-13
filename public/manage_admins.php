@@ -1,6 +1,7 @@
 <?php require_once("../includes/session.php"); ?>
 <?php require_once("../includes/db_connection.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
+<?php confirm_logged_in(); ?>
 
 <?php $admin_set = find_all_admins(); ?>
 
@@ -10,7 +11,9 @@
 
 <div id="main">
     <div id="navigation">
-        &nbsp;
+        <br />
+        <a href="admin.php">&laquo; Main Menu</a><br />
+        <br />
     </div>
     <div id="page">
         <?php echo message(); ?>
@@ -22,7 +25,9 @@
             </tr>
             <?php while($admin = mysqli_fetch_assoc($admin_set)) { ?>
                 <tr>
-                    <td><?php echo htmlentities($admin["username"]); ?></td>
+                    <td>
+                        <?php echo htmlentities($admin["username"]); ?>
+                    </td>
                     <td><a href="edit_admin.php?id=<?php echo urlencode($admin["id"]); ?>">Edit</a></td>    
                     <td><a href="delete_admin.php?id=<?php echo urlencode($admin["id"]); ?>"
                     onclick="return confirm('Are you sure?'); ">Delete</a></td>    
